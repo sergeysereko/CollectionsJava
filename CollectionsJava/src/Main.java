@@ -137,6 +137,38 @@ public class Main {
             System.out.println("--------------");
         }
 
+
+        // b. Создать userSet (HashSet<User>)
+        HashSet<User> userSet = new HashSet<>();
+
+        // c. Создать 2 экземпляра класса User с одинаковыми полями
+        User user1 = new User("Петр", 25, "+380634567878");
+        User user2 = new User("Петр", 25, "+380634567878");
+        User user3 = new User("Сергей", 30, "+38063567878");
+
+        // d. Добавить пользователей в userSet.
+        userSet.add(user1);
+        userSet.add(user2);
+        userSet.add(user3);
+
+        // Выводим пользователей на экран после hashCode override с учетом только name
+        System.out.println("Пользователи после hashCode override с учетом только name:");
+        for (User user : userSet) {
+            System.out.println(user);
+        }
+
+        // Переопределение hashCode для учета всех полей
+        user1 = new User("Петр", 25, "+380634567878");
+        user2 = new User("Петр", 25, "+380634567878");
+        user3 = new User("Сергей", 30, "+38063567878");
+
+        // Выводим пользователей на экран после hashCode override с учетом всех полей
+        System.out.println("\nПользователи после hashCode override все поля:");
+        for (User user : userSet) {
+            System.out.println(user);
+        }
+
+
     }
 
     // Метод для вывода всех элементов map в консоль
